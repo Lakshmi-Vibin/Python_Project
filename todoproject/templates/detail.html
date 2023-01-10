@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+ <h5 style="text-align:center;"> Task Details </h5>
+ <h5 style="text-align:right;"><a href="{% url 'cbvindex' %}" class="btn btn-success" >Back Home</a></h5>
+
+            <div class="shadow card bg-info text-white" style="height:100px;font-size:10px;" >
+            <div class="card-body">
+               <h6 class="card-title">{{task.priority}}.{{task.name}}</h6>
+                <p class="card-subtitle"><b>{{task.date}}</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="{% url 'cbvdelete' task.id %}" class="btn btn-danger" >Done</a>
+                    <a href="{% url 'cbvupdate' task.id %}" class="btn btn-success" >Update</a>
+
+                </p>
+            </div>
+
+        </div>
+
+{% endblock %}
